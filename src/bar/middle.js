@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Row, Col, Card } from 'antd'
-import Echarts from 'echarts'
+import { Card } from 'antd'
+import './middle.less'
 import ReactEcharts from 'echarts-for-react'
-
 
 class Middle extends Component {
     constructor() {
@@ -18,7 +17,7 @@ class Middle extends Component {
                 },
                 grid: {
                     top: '10%',
-                    left: '10%',
+                    left: '5%',
                     right: '5%',
                     bottom: '10%',
                     containLabel: true
@@ -48,13 +47,9 @@ class Middle extends Component {
             }, 
         }
     }
-    // componentDidMount(){
-    //     this.$axios.post("http//:10.9.22.207:3000/coffee/data/find")
-    //     .then
-    // }
     render() {
         return (
-                <Card>
+                <Card className="bar">
                     <ReactEcharts option={this.state.option3} style={{ height: "300px"}}></ReactEcharts>
                 </Card>
         )

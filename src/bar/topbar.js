@@ -139,7 +139,7 @@ class Top extends Component {
                         <div className="gutter-box">
                             <h2>总销售量</h2>
                             <h3>总订单</h3>
-                            <p className='bar'>
+                            <p>
                                 <ReactEcharts option={this.state.option} style={{ width: "400px", height: "100px" }} ></ReactEcharts>
                             </p>
                         </div>
