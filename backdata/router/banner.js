@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const shopModel=require('../db/model/shopmodel')
+const shopModel=require('../db/model/bannermodel')
 
 //banner修改
 /**

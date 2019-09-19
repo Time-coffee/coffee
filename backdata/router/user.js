@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const shopModel=require('../db/model/shopmodel')
+const shopModel=require('../db/model/usermodel')
 
 //用户添加
 /**
