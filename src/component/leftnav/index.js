@@ -1,9 +1,9 @@
 import React,{Component} from 'react'
-import {withRouter} from 'react-router-dom'
-import { Menu, Icon } from 'antd';
-import './index.less'
-const { SubMenu } = Menu;
 
+import { Menu, Icon } from 'antd'
+import {withRouter} from 'react-router-dom'
+import './index.less'
+const {SubMenu}=Menu;
 class Leftnav extends Component{
     constructor(){
         super()
@@ -60,6 +60,7 @@ class Leftnav extends Component{
                     )
                 })}
             </div>
+
         )
     }
 }
