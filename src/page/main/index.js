@@ -11,7 +11,9 @@ class Cfmain extends Component{
                 </div>
                 <div className='main-right'>
                     <div className='m-r-top'>top</div>
-                    <div className='m-r-content'>content</div>
+                    <div className='m-r-content'>
+                        {this.props.children}
+                    </div>
                     <div className='m-r-bottom'>bottom</div>
                 </div>
             </div>
