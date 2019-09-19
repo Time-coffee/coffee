@@ -1,11 +1,18 @@
-import React,{Component} from 'react'
 
-class Cfdata extends Component{
-    render(){
-        return(
-            <div>data</div>
+import React, { Component } from 'react'
+import { Card } from 'antd'
+import Top from '../../bar/topbar'
+import Middle from '../../bar/middle'
+import "./index.less"
+
+class Coffee extends Component {
+    render() {
+        return (
+            <Card>
+                <Top></Top>
+                <Middle></Middle>
+            </Card>
         )
     }
 }
-
-export default Cfdata
+export default Coffee
