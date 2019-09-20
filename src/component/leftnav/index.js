@@ -22,9 +22,10 @@ class Leftnav extends Component{
                 key:3,
                 path:'/main/user'},
                 {name:'banner管理',
-                list:['查看列表'],
+                list:['查看列表','banner添加'],
                 key:4,
-                path:'/main/banner'},
+                path:['/main/banner','/main/banner/bannerAdd']},
+
                 ]
         }
     }
@@ -49,9 +50,10 @@ class Leftnav extends Component{
                             }
                             >
                                 <Menu.ItemGroup key={item.key}>
-                                    {item.list.map((data)=>{
+                                    {item.list.map((data,index)=>{
+                                       // console.log('XXXXXXXXX',data,a)
                                         return(
-                                            <Menu.Item onClick={this.jump.bind(this,item.path)}>{data}</Menu.Item>
+                                            <Menu.Item onClick={this.jump.bind(this,item.path[index])}>{data}</Menu.Item>
                                         )
                                     })}
                                 </Menu.ItemGroup>
