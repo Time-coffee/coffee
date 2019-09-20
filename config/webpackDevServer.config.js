@@ -82,8 +82,8 @@ module.exports = function(proxy, allowedHost) {
     },
     public: allowedHost,
     proxy:{
-      'coffee':{
-        targer:'http://www.baidu.com',
+      '/coffee':{
+        target:'http://10.9.22.207:3001',
         changeOrigin:true,
         pathRewrite:{
           '^/coffee':''
