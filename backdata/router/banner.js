@@ -2,6 +2,27 @@ const express=require('express')
 const router=express.Router()
 const shopModel=require('../db/model/bannermodel')
 
+router.post('/add',(req,res)=>{
+    let {img,desc}=req.body
+    shopModel.insertMany({img,desc})
+    .then((data)=>{
+        if(data.length>0){
+            res.send({err:0,msg:'添加成功'})
+        }else{
+            res.send({err:-1,msg:'添加失败'})
+        }
+    })
+    .catch(()=>{
+        res.send({err:-880,msg:'内部错误请重试'})
+    })
+})
+router.post('/delete',(req,res)=>{
+    let {_id}=req.body
+    shopModel.deleteMany({_id})
+    .then((data)=>{
+        res.send({err:0,msg:'删除成功'})
+    })
+})
 //banner修改
 /**
  * @api {post} /coffee/banner/updata banner修改
