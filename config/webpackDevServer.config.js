@@ -81,14 +81,23 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
+    // proxy:{
+    //   '/coffee':{
+    //     target:'http://10.9.22.207:3001',
+    //     changeOrigin:true,
+    //     pathRewrite:{
+    //       '^/coffee':''
+    //     }
+    //   },
+    // },
     proxy:{
-      'coffee':{
-        targer:'http://www.baidu.com',
+      '/coffee':{
+        target:'http://10.9.22.207:3001',
         changeOrigin:true,
         pathRewrite:{
           '^/coffee':''
         }
-      }
+      },
     },
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
