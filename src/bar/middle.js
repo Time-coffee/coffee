@@ -7,6 +7,7 @@ class Middle extends Component {
     constructor() {
         super()
         this.state = {
+            zhou:[],
             option3: {
                 color: ['#3398DB'],
                 tooltip: {
@@ -25,7 +26,7 @@ class Middle extends Component {
                 xAxis: [
                     {
                         type: 'category',
-                        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        data: ['Mon', 'Tue', 'Wed', 'Thu'],
                         axisTick: {
                             alignWithLabel: true
                         }
@@ -41,18 +42,54 @@ class Middle extends Component {
                         name: '直接访问',
                         type: 'bar',
                         barWidth: '60%',
-                        data: [10, 52, 200, 334, 390, 330, 220]
+                        data: [10, 52, 200, 334]
                     }
                 ]
             }, 
         }
     }
+    initData=()=>{
+        this.$axios({
+            method:'post',
+            url:"/hehe/coffee/data/find",
+          })
+          .then((data)=>{
+             let dec= data.data.list
+             let ser=[]
+             let sa=""
+             dec.map((item,index)=>{
+                ser.push(item.name)
+             })
+             for(var i=0;i<ser.length;i++){
+                if(this.state.zhou.indexOf(ser[i])==-1){
+                     sa=this.state.zhou.push(ser[i])
+                }
+             }
+             console.log( this.state.zhou)
+             console.log(this.state.option3.xAxis[0].data)
+          })
+
+    }
+    componentDidMount(){
+        this.initData()
+    }
+       
+    uode=()=>{
+        let options=JSON.parse(JSON.stringify(this.state.option3))
+       
+        let newData=this.state.zhou
+        options.xAxis[0].data=newData
+        this.setState({option3:options})
+       
+    }
     render() {
         return (
                 <Card className="bar">
                     <ReactEcharts option={this.state.option3} style={{ height: "300px"}}></ReactEcharts>
+                    <button onClick={this.uode}>点击</button>
                 </Card>
-        )
+               
+        ) 
     }
 }
 export default Middle

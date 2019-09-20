@@ -7,7 +7,6 @@ import Banner from 'page/banner/index.js'
 import Data from 'page/data/index.js'
 import User from 'page/user/index.js'
 import BannerUpdate from 'page/banner/bannerUpdate/index.js'
-
 class Cfrouter extends Component{
     render(){
         return(

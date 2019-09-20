@@ -92,9 +92,17 @@ router.post('/updata',(req,res)=>{
  * @apiSuccess {Array} list 查询的数据
  */
 router.post('/find',(req,res)=>{
-    shopModel.find()
-    .then((data)=>{
-        res.send({err:0,msg:'查询成功',list:data})
+    let total = 0
+    shopModel.find({name:'拿铁',type:'热饮'})//查找数据库的用户名密码
+    .then((data)=>{//返回的查找的结果
+        total = data.length
+        console.log(total)
+        res.send({err:0,msg:"查找成功",list:data,total:total})
+       
+    })
+    .catch((err)=>{
+        res.send({err:err,msg:"内部错误，请重新填写"})
     })
 })
+
 module.exports=router
