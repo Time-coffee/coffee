@@ -91,6 +91,13 @@ module.exports = function(proxy, allowedHost) {
     //   },
     // },
     proxy:{
+      '/hehe':{
+          target:'http://10.9.22.207:3001',
+          changeOrigin:true,
+          pathRewrite:{
+            '^/hehe':''
+          }
+        },
       '/coffee':{
         target:'http://10.9.22.207:3001',
         changeOrigin:true,
@@ -99,6 +106,7 @@ module.exports = function(proxy, allowedHost) {
         }
       },
     },
+
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons

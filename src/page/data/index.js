@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Card } from 'antd'
 import Top from '../../bar/topbar'
 import Middle from '../../bar/middle'
+import Input from '../../bar/input'
 import "./index.less"
 
 class Coffee extends Component {
@@ -11,6 +12,7 @@ class Coffee extends Component {
             <Card>
                 <Top></Top>
                 <Middle></Middle>
+                <Input></Input>
             </Card>
         )
     }

@@ -1,11 +1,11 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 
 import { Menu, Icon } from 'antd'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import './index.less'
-const {SubMenu}=Menu;
-class Leftnav extends Component{
-    constructor(){
+const { SubMenu } = Menu;
+class Leftnav extends Component {
+    constructor() {
         super()
         this.state={
             list:[{
@@ -74,8 +74,8 @@ class Leftnav extends Component{
                 ]
         }
     }
-    jump=(path)=>{
-       this.props.history.push(path)
+    jump = (path) => {
+        this.props.history.push(path)
     }
     initdata=(data)=>{
         return (data.map((item)=>{

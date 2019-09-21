@@ -5,8 +5,6 @@ const Shop=require('./router/shop')
 const Data=require('./router/data')
 const User=require('./router/user')
 const Banner=require('./router/banner')
-
-
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
