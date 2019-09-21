@@ -26,7 +26,7 @@ class Middle extends Component {
                 xAxis: [
                     {
                         type: 'category',
-                        data: ['Mon', 'Tue', 'Wed', 'Thu'],
+                        data: ['Mon', 'Tue', 'Wed', 'Thu','hhf'],
                         axisTick: {
                             alignWithLabel: true
                         }
@@ -42,7 +42,7 @@ class Middle extends Component {
                         name: '直接访问',
                         type: 'bar',
                         barWidth: '60%',
-                        data: [10, 52, 200, 334]
+                        data: [10, 20, 30, 40,50]
                     }
                 ]
             }, 
@@ -51,7 +51,7 @@ class Middle extends Component {
     initData=()=>{
         this.$axios({
             method:'post',
-            url:"/hehe/coffee/data/find",
+            url:"/coffee/coffee/data/find",
           })
           .then((data)=>{
              let dec= data.data.list
@@ -80,7 +80,7 @@ class Middle extends Component {
         let newData=this.state.zhou
         options.xAxis[0].data=newData
         this.setState({option3:options})
-       
+       console.log()
     }
     render() {
         return (

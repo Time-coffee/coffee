@@ -127,18 +127,18 @@ class Top extends Component {
     initData=()=>{
         this.$axios({
             method:'post',
-            url:"/hehe/coffee/data/find",
+            url:"/coffee/coffee/data/find",
           })
           .then((data)=>{
+              console.log(data)
              let dec= data.data.list
              let ser=[]
-             let sa=""
              dec.map((item,index)=>{
                 ser.push(item.name)
              })
              for(var i=0;i<ser.length;i++){
                 if(this.state.zhou.indexOf(ser[i])==-1){
-                     sa=this.state.zhou.push(ser[i])
+                     this.state.zhou.push(ser[i])
                 }
              }
              console.log( this.state.zhou)

@@ -7,6 +7,7 @@ import Banner from 'page/banner/index.js'
 import Data from 'page/data/index.js'
 import User from 'page/user/index.js'
 import BannerUpdate from 'page/banner/bannerUpdate/index.js'
+import AddData from 'page/data/adddata.js'
 class Cfrouter extends Component{
     render(){
         return(
@@ -21,6 +22,7 @@ class Cfrouter extends Component{
                                     <Route path='/main/banner/update' component={BannerUpdate}></Route>
                                     <Route path='/main/banner' component={Banner}></Route>
                                     <Route path='/main/data' component={Data}></Route>
+                                    <Route path='/main/adddata' component={AddData}></Route>
                                     <Route path='/main/user' component={User}></Route>
                                 </Main>
                             )
