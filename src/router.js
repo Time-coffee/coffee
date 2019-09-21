@@ -6,8 +6,9 @@ import Shop from 'page/shop/index.js'
 import Banner from 'page/banner/index.js'
 import Data from 'page/data/index.js'
 import User from 'page/user/index.js'
-import BannerUpdate from 'page/banner/bannerUpdate/index.js'
+import BannerUpdate from 'page/bannerUpdate/index.js'
 import Addshop from 'page/shop/add.js'
+import BannerAdd from 'page/bannerAdd/index.js'
 class Cfrouter extends Component{
     render(){
         return(
@@ -21,7 +22,8 @@ class Cfrouter extends Component{
                                     <Route path='/main/shop' component={Shop}></Route>
                                     <Route path='/main/add' component={Addshop}></Route>
                                     <Route path='/main/banner/update' component={BannerUpdate}></Route>
-                                    <Route path='/main/banner' component={Banner}></Route>
+                                    <Route path='/main/banner' component={Banner} ></Route>
+                                    <Route path='/main/addbanner' component={BannerAdd}></Route>
                                     <Route path='/main/data' component={Data}></Route>
                                     <Route path='/main/user' component={User}></Route>
                                 </Main>
