@@ -21,7 +21,7 @@ class Cfrouter extends Component{
                                     <Route path='/main/shop' component={Shop}></Route>
                                    
                                     <Route path='/main/banner' component={Banner} ></Route>
-                                    <Route path='/main/banner/bannerAdd' component={BannerAdd}></Route>
+                                    <Route path='/main/addbanner' component={BannerAdd}></Route>
                                     <Route path='/main/data' component={Data}></Route>
                                     <Route path='/main/user' component={User}></Route>
                                 </Main>
