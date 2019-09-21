@@ -58,7 +58,7 @@ class Cfshop extends Component{
     delete=(record)=>{
       let url='/coffee/coffee/shop/delete'
       this.$axios.post(url,{_id:record.key}).then((req,res)=>{
-        this.setState({list:this.state.list})
+        this.componentDidMount()
       })
     }
     modify=(record)=>{
