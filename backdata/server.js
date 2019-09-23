@@ -7,6 +7,7 @@ const Data=require('./router/data')
 const User=require('./router/user')
 const Banner=require('./router/banner')
 const Upload=require('./router/upload')
+
 //const  cors=require('cors')
 
 app.all("*",function(req,res,next){

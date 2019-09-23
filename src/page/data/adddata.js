@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Card,Table,Button,Pagination,Spin,Popconfirm} from 'antd'
 import Add from './add'
+import Csd from '../../bar/csd'
 import './index.less'
+
 
 class Coffee extends Component {
     constructor(){
@@ -12,6 +14,8 @@ class Coffee extends Component {
             pageSize:5,
             total:0,
             loding:true,
+            updataShow:false, // 修改模态框的显示  
+            record:{},//要修改的数据
         }
     };
     columns=[
@@ -33,7 +37,7 @@ class Coffee extends Component {
             key:'img',
             width:200,
             render:(data)=>{
-                return (<img width='80px' src='bgyuyugyutyu.jpg'/>)
+                return (<img width='80' alt="" src={`http://10.9.22.207:3001${data}`}/>)
             }
         },
         {
@@ -63,13 +67,17 @@ class Coffee extends Component {
                     >
                     <Button type="danger" size="large">删除</Button>
                     </Popconfirm>
-                    <Button type="primary" size="large">修改</Button>
+                    <Button type="primary" size="large" onClick={this.updata.bind(this,record)}>修改</Button>
                     </div>
                 )
             }
             
         }
     ];
+    updata=(record)=>{
+        console.log('修改的数据',record)
+        this.setState({updataShow:!this.state.updataShow,record:record})
+    }
     detal=(id)=>{
         console.log(id)
         this.$axios({
@@ -91,15 +99,6 @@ class Coffee extends Component {
         //console.log()
     }
     initData=(page,pageSize)=>{
-        //console.log(page,pageSize)
-        //this.$axios.post(`/hehe/coffee/data/findPage?page=${page}&pageSize=${pageSize}`)
-        //.then((data)=>{
-        //    console.log(data)
-        //    if(data.data.err==0){
-        //        console.log(data)
-        //        this.setState({dataSource:data.data.list})
-        //    }
-       // })
        this.setState({loding:true})
        this.$axios({
         method:'post',
@@ -117,17 +116,24 @@ class Coffee extends Component {
         //console.log(res)
       })
     }
+    refresh=()=>{
+        //列表的刷新方法
+        this.setState({updataShow:false})
+        //请求新数据刷新页面
+        this.initData(this.state.page,this.state.pageSize)
+    }
     componentDidMount(){
         let {page,pageSize}=this.state
         this.initData(page,pageSize)
     }
     render() {
-        let {total,pageSize,loding}=this.state
+        let {total,pageSize,loding,updataShow,record}=this.state
         return (
             <Card className='food-container'>
             <Spin tip="数据加载中"
                 spinning={loding}
             >
+            {!updataShow||<Csd record={record} refreshfun={this.refresh}></Csd>}
              <Table
               dataSource={this.state.dataSource}
               className='test'

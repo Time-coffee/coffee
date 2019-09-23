@@ -7,7 +7,7 @@ class Input extends Component{
             <Card>
                 <label>名字:</label><input type="text"/>
                 <label>类型:</label><input type="text"/>
-                <Button>提交</Button>
+                <Button>查询</Button>
             </Card>
         )
     }

@@ -4,7 +4,6 @@ import { Card } from 'antd'
 import Top from '../../bar/topbar'
 import Middle from '../../bar/middle'
 import Input from '../../bar/input'
-import "./index.less"
 
 class Coffee extends Component {
     render() {
